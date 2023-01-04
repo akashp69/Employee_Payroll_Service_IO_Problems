@@ -26,7 +26,7 @@ public class FileIOPayrollService implements PayrollService {
 
     @Override
     public void readPayrollData() throws IOException {
-    Files.lines(new File(FILE_PATH).toPath()).forEach(employeeData -> System.out.println(employeeData) );
+        Files.lines(new File(FILE_PATH).toPath()).forEach(System.out::println);
     }
 
     @Override
