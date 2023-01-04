@@ -73,6 +73,10 @@ import java.util.Scanner;
         EmployeePayrollService employPayrollService = new EmployeePayrollService();
         employPayrollService.readEmployPayrollData(IOServices.CONSOLE_IO);
         employPayrollService.writeEmployeePayrollData(IOServices.CONSOLE_IO);
-        employPayrollService.countEntries(IOServices.CONSOLE_IO);
+        long count= employPayrollService.countEntries(IOServices.CONSOLE_IO);
+        /**
+        * Show FileIO count no of entries
+        **/
+        System.out.println(count);
         }
         }
