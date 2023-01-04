@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-     /**
-     * @author Akash Pakhare
-     */
+/**
+ * This Class is Created for doing File Operations
+ */
 public class EmployeePayroll {
-     /**
-     * This is Main Method is Using For Calling the Methods
-     */
-     public static void main(String[] args) {
-     System.out.println("..WELCOME TO EMPLOYEE PAYROLL SYSTEM..");
-     EmployeePayrollService employeePayrollService = new EmployeePayrollService();
-     employeePayrollService.readEmployeeDataFromConsole();
-     employeePayrollService.writeEmployeeDataInConsole();
-     }
-     }
+          public static boolean deleteFiles(File contentToDelete) {
+          File[] allContents = contentToDelete.listFiles();
+          if (allContents != null) {
+          for (File eachFile : allContents) {
+          deleteFiles(eachFile);
+          }
+          }
+          return contentToDelete.delete();
+          }
+          }
