@@ -4,52 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * @author Akash Pakhare
- */
+    /**
+    * This class is Used  for Created the list of Employee Payroll and Read & Write the Data
+    */
 public class EmployeePayrollService {
-    private List<EmployeePayrollData> employeePayrollDataList;
-    public EmployeePayrollService() {
+    private List<EmployeePayrollData> employePayrollList = new ArrayList<EmployeePayrollData>();
+    Scanner scanner = new Scanner(System.in);
     /**
-    * This is Default Constructor
+    * This Method is Created for Read Employee Data from Console
     */
-    }
-    public EmployeePayrollService(ArrayList<EmployeePayrollData> employPayrollDataList) {
-    /**
-    *This is Parameterized Constructor
-    */
-    this.employeePayrollDataList =employPayrollDataList;
-    }
-    public static void main(String[] args) {
-    Scanner scanner1 = new Scanner(System.in);
-    ArrayList<EmployeePayrollData> employPayrollDataList = new ArrayList<>();
-    EmployeePayrollService  employPayrollService = new EmployeePayrollService(employPayrollDataList);
-    employPayrollService.readEmployPayrollData(scanner1);
-    employPayrollService.writeEmployPayrollData();
+    public void readEmployeeDataFromConsole() {
+    System.out.println("Enter Employee Id");
+    int id = scanner.nextInt();
+    System.out.println("Enter Employee Name");
+    String Name = scanner.next();
+    System.out.println("Enter the salary");
+    int salary = scanner.nextInt();
+    employePayrollList.add(new EmployeePayrollData(id, Name, salary));
     }
     /**
-    *Create write method to print data of employee
+    * This Method is Created for Write the employee data in Console
     */
-    private void writeEmployPayrollData(){
-    /**
-    *Print the employee data which is stored in employPayrollDataList
-    **/
-    System.out.println("Writing EmployPayrollData: " + employeePayrollDataList);
-    }
-    /**
-    *This method  is Created to read the input from user through console
-    **/
-    private void readEmployPayrollData(Scanner scanner1){
-    System.out.println("Enter your Id: ");
-    int id = scanner1.nextInt();
-    System.out.println("Enter your name: ");
-    String name = scanner1.next();
-    System.out.println("Enter your salary: ");
-    double salary = scanner1.nextDouble();
-    EmployeePayrollData employeeData = new EmployeePayrollData(id, name, salary);
-    /**
-    *Adding all Employee data to the Arraylist
-    */
-    employeePayrollDataList.add(employeeData);
+    public void writeEmployeeDataInConsole() {
+    System.out.println("Writing Employee Pay Roll Data \n" + employePayrollList);
     }
     }
